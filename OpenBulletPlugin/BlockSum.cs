@@ -178,13 +178,10 @@ namespace OpenBulletPlugin
             // We compute the result as a string (remember that OpenBullet only accepts strings, or list of strings, or dictionaries of strings).
             var result = (first + second).ToString();
 
-            // We create a list of outputs with a single element (this is an old system that needs a rework, sorry).
-            var list = new List<string>() { result };
-
             /* This method will add the variables from the list into OpenBullet. Hover on the name of the method
              * to see what all the parameters mean.
              */
-            InsertVariables(data, IsCapture, false, list, VariableName, "", "", false, false);
+            InsertVariable(data, IsCapture, result, VariableName, "", "", false, false);
 
             /*
              * We use the Log method of data to output information to the debugger log / bot log. If you want to use a
